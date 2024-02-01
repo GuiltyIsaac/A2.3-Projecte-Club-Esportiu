@@ -22,3 +22,13 @@ CREATE TABLE activitats(
 
     CONSTRAINT pk_socias PRIMARY KEY(id)
 );
+CREATE TABLE Monitors(
+    dni VARCHAR2(9),
+    nom VARCHAR2(50),
+    cognoms VARCHAR2(50),
+    email VARCHAR2(500) UNIQUE NOT NULL,
+    telf VARCHAR2(500) UNIQUE NOT NULL, 
+    compte VARCHAR2(50) UNIQUE NOT NULL
+
+    CONSTRAINT pk_dni_monitor PRIMARY KEY(dni)
+);
