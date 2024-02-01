@@ -2,8 +2,8 @@ CREATE TABLE socis(
     id NUMBER(11),
     nom VARCHAR2(50),
     cognoms VARCHAR2(100),
-    edat NUMBER(3),
-    numCompte VARCHAR2(24)UNIQUE NOT NULL,
+    dataNaix DATE,
+    num_compte VARCHAR2(24)UNIQUE NOT NULL,
     email VARCHAR2(40) UNIQUE,
     telf NUMBER(9)UNIQUE NOT NULL,
 
@@ -12,11 +12,11 @@ CREATE TABLE socis(
 
 CREATE TABLE activitats(
     id NUMBER(11),
-    preu VARCHAR2(5,2),
+    preu NUMBER(10,2),
     nom VARCHAR2(50),
     descripcio VARCHAR2(500),
-    dataInici DATE,
-    dataFinal DATE,
+    data_inici DATE,
+    data_final DATE,
     
     CONSTRAINT pk_activitats PRIMARY KEY(id)
 );
@@ -33,12 +33,12 @@ CREATE TABLE monitors(
 CREATE TABLE seccio(
     id NUMBER(11),
     nom VARCHAR2(50),
-    desc. VARCHAR2(500),
+    descripcio VARCHAR2(500),
     
 CONSTRAINT pk_id PRIMARY KEY(id)
 );
 CREATE TABLE socis_activitats(
     id_socis_activitats NUMBER(11),
     data_inscripcio DATE,
-    estat_inscripcio NUM(1) DEFAULT 0
+    estat_inscripcio NUMBER(1) DEFAULT 0
 );
