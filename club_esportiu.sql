@@ -7,7 +7,7 @@ CREATE TABLE socis(
     email VARCHAR2(40) UNIQUE,
     telf NUMBER(9)UNIQUE NOT NULL
 
-    CONSTRAINT pk_socias PRIMARY KEY(id)
+    CONSTRAINT pk_socis PRIMARY KEY(id)
 );
 
 CREATE TABLE activitats(
@@ -15,10 +15,8 @@ CREATE TABLE activitats(
     preu VARCHAR2(5,2),
     nom VARCHAR2(50),
     descripcio VARCHAR2(500),
-    dataInici DATE
-    numCompte VARCHAR2(24)UNIQUE NOT NULL,
-    email VARCHAR2(40) UNIQUE,
-    telf NUMBER(9)UNIQUE NOT NULL
-
-    CONSTRAINT pk_socias PRIMARY KEY(id)
+    dataInici DATE,
+    dataFinal DATE,
+    
+    CONSTRAINT pk_activitats PRIMARY KEY(id)
 );
