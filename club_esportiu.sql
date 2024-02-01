@@ -37,3 +37,8 @@ CREATE TABLE seccio(
     
 CONSTRAINT pk_id PRIMARY KEY(id)
 );
+CREATE TABLE socis_activitats(
+    id_socis_activitats NUMBER(11),
+    data_inscripcio DATE,
+    estat_inscripcio NUM(1) DEFAULT 0
+);
