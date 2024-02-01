@@ -40,5 +40,20 @@ CONSTRAINT pk_id PRIMARY KEY(id)
 CREATE TABLE socis_activitats(
     id_socis_activitats NUMBER(11),
     data_inscripcio DATE,
-    estat_inscripcio NUMBER(1) DEFAULT 0
+    estat_inscripcio NUMBER(1) DEFAULT 0,
+
+    CONSTRAINT pk_dni_monitor PRIMARY KEY(soci_id, activitats_id)
 );
+
+CREATE TABLE activitats_monitors(
+    id_activitats_monitors NUMBER(11),
+
+    CONSTRAINT pk_dni_monitor PRIMARY KEY(activitats_id, monitor_dni)
+);
+
+CREATE TABLE monitors_responsable(
+     dni_responsable NUMBER(11),
+
+    CONSTRAINT pk_dni_monitor PRIMARY KEY(monitors_dni, dni_responsable)
+);
+
