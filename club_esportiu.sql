@@ -29,7 +29,7 @@ CREATE TABLE monitors(
     telf VARCHAR2(500) UNIQUE NOT NULL, 
     compte VARCHAR2(50) UNIQUE NOT NULL,
 
-    CONSTRAINT pk_dni_monitor PRIMARY KEY(dni)
+    CONSTRAINT pk_dni_monitor PRIMARY KEY(id)
 );
 CREATE TABLE seccio(
     id NUMBER(11),
