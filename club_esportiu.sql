@@ -3,9 +3,9 @@ CREATE TABLE socis(
     nom VARCHAR2(50),
     cognoms VARCHAR2(100),
     dataNaix DATE,
-    num_compte VARCHAR2(24)UNIQUE NOT NULL,
-    email VARCHAR2(40) UNIQUE,
-    telf NUMBER(9)UNIQUE NOT NULL,
+    num_compte VARCHAR2(24),
+    email VARCHAR2(40) ,
+    telf NUMBER(50),
 
     CONSTRAINT pk_socis PRIMARY KEY(id)
 );
@@ -25,9 +25,9 @@ CREATE TABLE monitors(
     dni VARCHAR2(9),
     nom VARCHAR2(50),
     cognoms VARCHAR2(50),
-    email VARCHAR2(500) UNIQUE NOT NULL,
-    telf VARCHAR2(500) UNIQUE NOT NULL, 
-    compte VARCHAR2(50) UNIQUE NOT NULL,
+    email VARCHAR2(50),
+    telf VARCHAR2(50), 
+    compte VARCHAR2(50),
 
     CONSTRAINT pk_dni_monitor PRIMARY KEY(id)
 );
