@@ -29,32 +29,35 @@ CREATE TABLE monitors(
     telf VARCHAR2(50), 
     compte VARCHAR2(50),
 
-    CONSTRAINT pk_dni_monitor PRIMARY KEY(id)
+    CONSTRAINT pk_monitors PRIMARY KEY(id)
 );
 CREATE TABLE seccio(
     id NUMBER(11),
     nom VARCHAR2(50),
     descripcio VARCHAR2(500),
     
-CONSTRAINT pk_id PRIMARY KEY(id)
+CONSTRAINT pk_seccio PRIMARY KEY(id)
 );
 CREATE TABLE socis_activitats(
-    id_socis_activitats NUMBER(11),
+    socis_id NUMBER(11),
+    activitats_id NUMBER(11),
     data_inscripcio DATE,
-    estat_inscripcio NUMBER(1) DEFAULT 0,
+    estat_inscripcio NUMBER(1) DEFAULT 0, --L'estat de la inscripcio pot tenir 2 valors, pagat i no pagat (processat / no processat)
 
-    CONSTRAINT pk_dni_monitor PRIMARY KEY(soci_id, activitats_id)
+    CONSTRAINT pk_socis_activitats PRIMARY KEY(socis_id, activitats_id),
+    CONSTRAINT fk_socis_activitats_socis FOREIGN KEY (socis_id) REFERENCES socis(id) 
 );
 
 CREATE TABLE activitats_monitors(
-    id_activitats_monitors NUMBER(11),
+    activitats_id NUMBER(11),
+    monitors_id NUMBER(11),
 
-    CONSTRAINT pk_dni_monitor PRIMARY KEY(activitats_id, monitor_dni)
+    CONSTRAINT pk_activitats_monitors PRIMARY KEY(activitats_id, monitors_id)
 );
 
 CREATE TABLE monitors_responsable(
-     dni_responsable NUMBER(11),
+     monitors_id NUMBER(11),
 
-    CONSTRAINT pk_dni_monitor PRIMARY KEY(monitors_dni, dni_responsable)
+    CONSTRAINT pk_monitors_responsable PRIMARY KEY(monitors_id)
 );
 
