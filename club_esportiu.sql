@@ -21,6 +21,7 @@ CREATE TABLE activitats(
     CONSTRAINT pk_activitats PRIMARY KEY(id)
 );
 CREATE TABLE monitors(
+    id VARCHAR2(9),
     dni VARCHAR2(9),
     nom VARCHAR2(50),
     cognoms VARCHAR2(50),
