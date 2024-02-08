@@ -45,7 +45,8 @@ CREATE TABLE socis_activitats(
     estat_inscripcio NUMBER(1) DEFAULT 0, --L'estat de la inscripcio pot tenir 2 valors, pagat i no pagat (processat / no processat)
 
     CONSTRAINT pk_socis_activitats PRIMARY KEY(socis_id, activitats_id),
-    CONSTRAINT fk_socis_activitats_socis FOREIGN KEY (socis_id) REFERENCES socis(id) 
+    CONSTRAINT fk_socis_activitats_socis FOREIGN KEY (socis_id) REFERENCES socis(id),
+    CONSTRAINT ck_inscrit CHECK estat_inscripcio(0,1)
 );
 
 CREATE TABLE activitats_monitors(
