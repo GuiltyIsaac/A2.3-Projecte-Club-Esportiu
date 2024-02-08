@@ -22,12 +22,12 @@ CREATE TABLE activitats(
 );
 CREATE TABLE monitors(
     id NUMBER(9),
-    dni VARCHAR2(9) UNIQUE NOT NULL,
+    dni VARCHAR2(9) NOT NULL UNIQUE,
     nom VARCHAR2(50),
     cognoms VARCHAR2(50),
     email VARCHAR2(50),
     telf VARCHAR2(50), 
-    compte VARCHAR2(50) UNIQUE NOT NULL,
+    compte VARCHAR2(50) NOT NULL UNIQUE,
     monitor_responsable NUMBER(11),
     seccio_id NUMBER(11),
 
