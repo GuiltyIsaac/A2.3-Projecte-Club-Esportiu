@@ -3,9 +3,9 @@ CREATE TABLE socis(
     nom VARCHAR2(50),
     cognoms VARCHAR2(100),
     dataNaix DATE,
-    num_compte VARCHAR2(24),
-    email VARCHAR2(40) ,
-    telf NUMBER(50),
+    num_compte VARCHAR2(24) UNIQUE NOT NULL,
+    email VARCHAR2(40) UNIQUE NOT NULL,
+    telf VARCHAR2(50),
 
     CONSTRAINT pk_socis PRIMARY KEY(id)
 );
@@ -22,12 +22,12 @@ CREATE TABLE activitats(
 );
 CREATE TABLE monitors(
     id NUMBER(9),
-    dni VARCHAR2(9),
+    dni VARCHAR2(9) UNIQUE NOT NULL,
     nom VARCHAR2(50),
     cognoms VARCHAR2(50),
     email VARCHAR2(50),
     telf VARCHAR2(50), 
-    compte VARCHAR2(50),
+    compte VARCHAR2(50) UNIQUE NOT NULL,
     monitor_responsable NUMBER(11),
     seccio_id NUMBER(11)
 
@@ -44,7 +44,7 @@ CONSTRAINT pk_seccio PRIMARY KEY(id)
 CREATE TABLE socis_activitats(
     socis_id NUMBER(11),
     activitats_id NUMBER(11),
-    data_inscripcio DATE,
+    data_inscripcio DATE DEFAULT SYSDATE,
     estat_inscripcio NUMBER(1) DEFAULT 0, --L'estat de la inscripcio pot tenir 2 valors, pagat i no pagat (processat / no processat)
 
     CONSTRAINT pk_socis_activitats PRIMARY KEY(socis_id, activitats_id),
