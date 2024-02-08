@@ -57,7 +57,7 @@ CREATE TABLE activitats_monitors(
     monitors_id NUMBER(11),
 
     CONSTRAINT pk_activitats_monitors PRIMARY KEY(activitats_id, monitors_id),
-    CONSTRAINT fk_activitats_id FOREIGN KEY(activitats_id) REFERENCES activitat(id),
+    CONSTRAINT fk_activitats_id FOREIGN KEY(activitats_id) REFERENCES activitats(id),
     CONSTRAINT fk_monitors_id FOREIGN KEY(monitors_id) REFERENCES monitors(id)
     
 );
