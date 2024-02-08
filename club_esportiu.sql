@@ -29,9 +29,9 @@ CREATE TABLE monitors(
     telf VARCHAR2(50), 
     compte VARCHAR2(50) UNIQUE NOT NULL,
     monitor_responsable NUMBER(11),
-    seccio_id NUMBER(11)
+    seccio_id NUMBER(11),
 
-    CONSTRAINT pk_monitors PRIMARY KEY(id)
+    CONSTRAINT pk_monitors PRIMARY KEY(id),
     CONSTRAINT fk_seccio_id FOREIGN KEY(seccio_id) REFERENCES seccio(id)
 );
 CREATE TABLE seccio(
