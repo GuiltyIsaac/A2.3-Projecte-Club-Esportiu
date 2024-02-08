@@ -28,8 +28,11 @@ CREATE TABLE monitors(
     email VARCHAR2(50),
     telf VARCHAR2(50), 
     compte VARCHAR2(50),
+    monitor_responsable NUMBER(11),
+    seccio_id NUMBER(11)
 
     CONSTRAINT pk_monitors PRIMARY KEY(id)
+    CONSTRAINT fk_seccio_id FOREIGN KEY(seccio_id) REFERENCES seccio(id)
 );
 CREATE TABLE seccio(
     id NUMBER(11),
@@ -53,12 +56,9 @@ CREATE TABLE activitats_monitors(
     activitats_id NUMBER(11),
     monitors_id NUMBER(11),
 
-    CONSTRAINT pk_activitats_monitors PRIMARY KEY(activitats_id, monitors_id)
-);
-
-CREATE TABLE monitors_responsable(
-     monitors_id NUMBER(11),
-
-    CONSTRAINT pk_monitors_responsable PRIMARY KEY(monitors_id)
+    CONSTRAINT pk_activitats_monitors PRIMARY KEY(activitats_id, monitors_id),
+    CONSTRAINT fk_activitats_id FOREIGN KEY(activitats_id),
+    CONSTRAINT fk_monitors_id FOREIGN KEY(monitors_id)
+    
 );
 
