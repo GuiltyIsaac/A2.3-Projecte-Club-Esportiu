@@ -49,6 +49,7 @@ CREATE TABLE socis_activitats(
 
     CONSTRAINT pk_socis_activitats PRIMARY KEY(socis_id, activitats_id),
     CONSTRAINT fk_socis_activitats_socis FOREIGN KEY (socis_id) REFERENCES socis(id),
+    CONSTRAINT fk_socis_activitats_activitats FOREIGN KEY(activitats_id) REFERENCES activitats(id),
     CONSTRAINT ck_inscrit CHECK (estat_inscripcio IN (0,1))
 );
 
